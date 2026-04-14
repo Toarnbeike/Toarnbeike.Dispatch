@@ -1,0 +1,19 @@
+<Solution>
+  <Folder Name="/docs/" />
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="CHANGELOG.md" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Dispatch.Abstractions/Dispatch.Abstractions.csproj" Id="e548f3b0-d4d5-4709-a90e-6345e79ede61" />
+    <Project Path="src/Dispatch/Dispatch.csproj" Id="6c987031-4aa9-42a8-8e8c-1f56f029f98c" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Dispatch.Tests/Dispatch.Tests.csproj" Id="ec984a02-f7ce-456b-8b36-18d755a968b3" />
+    <Project Path="tests/IntegrationTests/IntegrationTests.csproj" Id="c46facf5-c668-4ec3-90d1-921857f3dc0b" />
+    <Project Path="tests/TestLibrary/TestLibrary.csproj" Id="e74f6b4a-1129-4731-b592-f48befc778ca" />
+  </Folder>
+</Solution>

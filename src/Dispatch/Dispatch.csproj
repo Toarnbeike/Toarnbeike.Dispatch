@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<RootNamespace>Toarnbeike.Dispatch</RootNamespace>
+		<TargetFramework>net10.0</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" />
+		<PackageReference Include="Microsoft.Extensions.Options" />
+		<PackageReference Include="Toarnbeike.Optional" />
+		<PackageReference Include="Toarnbeike.Results" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Dispatch.Abstractions\Dispatch.Abstractions.csproj" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<NoWarn>$(NoWarn);CA2012</NoWarn>
+	</PropertyGroup>
+</Project>
