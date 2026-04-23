@@ -33,6 +33,7 @@ public static class RegisterHandlerExtensions
         public IServiceCollection RegisterCreateCommandHandler<TCreateCommand, TKey, TCommandHandler>()
             where TCreateCommand : ICreateCommand<TKey>
             where TCommandHandler : class, IRequestHandler<TCreateCommand, CreateCommandResponse<TKey>>
+            where TKey : notnull
         {
             return services.RegisterHandler<TCreateCommand, CreateCommandResponse<TKey>, TCommandHandler>();
         }
@@ -47,6 +48,7 @@ public static class RegisterHandlerExtensions
         public IServiceCollection RegisterQueryHandler<TQuery, TResponse, TQueryHandler>()
             where TQuery : IQuery<TResponse>
             where TQueryHandler : class, IRequestHandler<TQuery, TResponse>
+            where TResponse : notnull
         {
             return services.RegisterHandler<TQuery, TResponse, TQueryHandler>();
         }
@@ -54,6 +56,7 @@ public static class RegisterHandlerExtensions
         public IServiceCollection RegisterHandler<TRequest, TResponse, THandler>()
             where TRequest : IRequest<TResponse>
             where THandler : class, IRequestHandler<TRequest, TResponse>
+            where TResponse : notnull
         {
             services.AddScoped<IRequestHandler<TRequest, TResponse>, THandler>();
             return services;

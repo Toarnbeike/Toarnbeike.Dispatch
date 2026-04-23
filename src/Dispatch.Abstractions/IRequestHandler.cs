@@ -12,6 +12,7 @@ namespace Toarnbeike.Dispatch.Abstractions;
 [EditorBrowsable(EditorBrowsableState.Never)]
 public interface IRequestHandler<in TRequest, TResponse>
     where TRequest : IRequest<TResponse>
+    where TResponse : notnull
 {
     /// <summary>
     /// Handler implementation for the request.

@@ -32,6 +32,7 @@ public sealed class LoggingBehavior<TRequest, TResult>(
     TimeProvider timeProvider)
     : IPipelineBehavior<TRequest, TResult>
     where TRequest : IRequest<TResult>
+    where TResult : notnull
 {
     /// <inheritdoc/>
     public async Task<Result<TResult>> HandleAsync(TRequest request, RequestHandlerDelegate<TResult> next, CancellationToken cancellationToken = default)

@@ -102,6 +102,7 @@ internal class LoggingPipelineBehaviorTests
         TimeSpan? threshold = null,
         TimeProvider? timeProvider = null)
         where TRequest : IRequest<TResult>
+        where TResult : notnull
     {
         var options = Options.Create(new LoggingBehaviorOptions
         {

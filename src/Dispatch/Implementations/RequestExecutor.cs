@@ -8,6 +8,7 @@ internal sealed class RequestExecutor<TRequest, TResult>(
     IRequestHandler<TRequest, TResult> handler,
     IEnumerable<IPipelineBehavior<TRequest, TResult>> behaviors) : IRequestExecutor<TRequest, TResult>
     where TRequest : IRequest<TResult>
+    where TResult : notnull
 {
     public async Task<Result<TResult>> ExecuteAsync(TRequest request, CancellationToken cancellationToken)
     {

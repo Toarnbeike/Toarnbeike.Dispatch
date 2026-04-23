@@ -6,4 +6,5 @@ namespace Toarnbeike.Dispatch.Requests;
 /// Request that queries the system for data and returns a result of type TResult.
 /// </summary>
 /// <typeparam name="TResult">The type of the returned result.</typeparam>
-public interface IQuery<TResult> : IRequest<TResult>;
+public interface IQuery<TResult> : IRequest<TResult>
+    where TResult : notnull;

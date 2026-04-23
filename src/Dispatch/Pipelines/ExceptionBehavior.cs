@@ -13,6 +13,7 @@ namespace Toarnbeike.Dispatch.Pipelines;
 /// <typeparam name="TResult">The type of result produced by the request.</typeparam>
 public class ExceptionBehavior<TRequest, TResult> : IPipelineBehavior<TRequest, TResult>
     where TRequest : IRequest<TResult>
+    where TResult : notnull
 {
     public async Task<Result<TResult>> HandleAsync(TRequest request, RequestHandlerDelegate<TResult> next, CancellationToken cancellationToken = default)
     {

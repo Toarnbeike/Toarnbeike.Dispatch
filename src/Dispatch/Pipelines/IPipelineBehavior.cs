@@ -7,6 +7,7 @@ public delegate Task<Result<TResult>> RequestHandlerDelegate<TResult>();
 
 public interface IPipelineBehavior<in TRequest, TResult>
     where TRequest : IRequest<TResult>
+    where TResult : notnull
 {
     /// <summary>
     /// Processes the specified request asynchronously within the pipeline and returns the result produced by the operation.

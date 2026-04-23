@@ -17,6 +17,7 @@ internal sealed class RequestDispatcher(IServiceScopeFactory scopeFactory) : IRe
         TRequest request,
         CancellationToken cancellationToken = default)
         where TRequest : IRequest<TResult>
+        where TResult: notnull
     {
         return DispatchInternal<TRequest, TResult>(request, cancellationToken);
     }
@@ -29,17 +30,20 @@ internal sealed class RequestDispatcher(IServiceScopeFactory scopeFactory) : IRe
         DispatchInternal<ICommand, CommandResponse>(command, cancellationToken);
 
     /// <inheritdoc />
-    public Task<Result<CreateCommandResponse<TKey>>> Dispatch<TKey>(ICreateCommand<TKey> command, CancellationToken cancellationToken = default) =>
+    public Task<Result<CreateCommandResponse<TKey>>> Dispatch<TKey>(ICreateCommand<TKey> command, CancellationToken cancellationToken = default)
+        where TKey : notnull =>
         DispatchInternal<ICreateCommand<TKey>, CreateCommandResponse<TKey>>(command, cancellationToken);
 
     /// <inheritdoc />
-    public Task<Result<TResult>> Dispatch<TResult>(IQuery<TResult> query, CancellationToken cancellationToken = default) =>
+    public Task<Result<TResult>> Dispatch<TResult>(IQuery<TResult> query, CancellationToken cancellationToken = default)
+        where TResult : notnull =>
         DispatchInternal<IQuery<TResult>, TResult>(query, cancellationToken);
 
     private async Task<Result<TResult>> DispatchInternal<TRequest, TResult>(
         TRequest request,
         CancellationToken cancellationToken)
         where TRequest : IRequest<TResult>
+        where TResult : notnull
     {
         await using var scope = scopeFactory.CreateAsyncScope();
 
@@ -68,6 +72,7 @@ internal sealed class RequestDispatcher(IServiceScopeFactory scopeFactory) : IRe
         object request,
         CancellationToken ct)
         where TRequest : IRequest<TResult>
+        where TResult : notnull
     {
         try
         {
@@ -81,15 +86,4 @@ internal sealed class RequestDispatcher(IServiceScopeFactory scopeFactory) : IRe
             return Result<TResult>.Failure(new MissingHandlerFailure<TRequest>((TRequest)request));
         }
     }
-
-    //private async Task<Result<TResult>> DispatchInternal<TRequest, TResult>(TRequest request, CancellationToken cancellationToken)
-    //    where TRequest : IRequest<TResult>
-    //{
-    //    await using var scope = scopeFactory.CreateAsyncScope();
-
-    //    var executor = scope.ServiceProvider.GetService<IRequestExecutor<TRequest, TResult>>();
-    //    return executor != null
-    //        ? await executor.ExecuteAsync(request, cancellationToken)
-    //        : new MissingHandlerFailure<TRequest>(request);
-    //}
 }

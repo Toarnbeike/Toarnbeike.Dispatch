@@ -23,7 +23,7 @@ public class RequestDispatchingTests
 
         var dispatcher = services.GetRequiredService<IRequestDispatcher>();
 
-        var result = await dispatcher.Dispatch<TestQuery, int>(new TestQuery());
+        var result = await dispatcher.Dispatch(new TestQuery());
 
         result.ShouldBeSuccess().ShouldBe(42);
     }

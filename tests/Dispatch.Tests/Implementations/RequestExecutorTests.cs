@@ -141,6 +141,7 @@ public class RequestExecutorTests
         IRequestHandler<TRequest, TResult> handler,
         params IPipelineBehavior<TRequest, TResult>[] behaviors)
         where TRequest : IRequest<TResult>
+        where TResult : notnull
     {
         return new RequestExecutor<TRequest, TResult>(handler, behaviors);
     }

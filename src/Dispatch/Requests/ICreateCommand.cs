@@ -8,4 +8,5 @@ namespace Toarnbeike.Dispatch.Requests;
 /// Returns a <see cref="CreateCommandResponse{TKey}"/>, containing information regarding the created entity.
 /// </summary>
 /// <typeparam name="TKey">The key type of the entity created.</typeparam>
-public interface ICreateCommand<TKey> : IRequest<CreateCommandResponse<TKey>>, ICommand;
+public interface ICreateCommand<TKey> : IRequest<CreateCommandResponse<TKey>>, ICommand
+    where TKey : notnull;
