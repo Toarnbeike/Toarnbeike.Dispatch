@@ -17,6 +17,7 @@
   </Folder>
   <Folder Name="/workflows/">
     <File Path=".github/workflows/build.yaml" />
+    <File Path=".github/workflows/publish.yaml.future" />
     <File Path=".github/workflows/versionCheck.yaml" />
   </Folder>
 </Solution>
