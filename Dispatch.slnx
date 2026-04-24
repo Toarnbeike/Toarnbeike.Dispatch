@@ -13,7 +13,6 @@
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/Dispatch.Tests/Dispatch.Tests.csproj" Id="ec984a02-f7ce-456b-8b36-18d755a968b3" />
-    <Project Path="tests/TestLibrary/TestLibrary.csproj" Id="e74f6b4a-1129-4731-b592-f48befc778ca" />
   </Folder>
   <Folder Name="/workflows/">
     <File Path=".github/workflows/build.yaml" />

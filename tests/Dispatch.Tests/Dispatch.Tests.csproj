@@ -10,12 +10,12 @@
 		<PackageReference Include="Microsoft.Extensions.TimeProvider.Testing" />
 		<PackageReference Include="NSubstitute" />
 		<PackageReference Include="Shouldly" />
+		<PackageReference Include="Toarnbeike.Testing" />
 		<PackageReference Include="TUnit" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\src\Dispatch\Dispatch.csproj" />
-		<ProjectReference Include="..\TestLibrary\TestLibrary.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

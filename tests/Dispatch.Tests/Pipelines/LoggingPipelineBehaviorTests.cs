@@ -7,7 +7,7 @@ using Toarnbeike.Dispatch.Pipelines;
 using Toarnbeike.Dispatch.Requests;
 using Toarnbeike.Results;
 using Toarnbeike.Results.Failures;
-using Toarnbeike.TestLibrary.Logging;
+using Toarnbeike.Testing.Logging;
 
 namespace Toarnbeike.Dispatch.Tests.Pipelines;
 
