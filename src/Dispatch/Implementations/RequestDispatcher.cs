@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Concurrent;
 using System.Reflection;
-using Toarnbeike.Dispatch.Abstractions;
 using Toarnbeike.Dispatch.Failures;
 using Toarnbeike.Dispatch.Requests;
 using Toarnbeike.Dispatch.Responses;

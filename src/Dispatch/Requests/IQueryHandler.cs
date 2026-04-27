@@ -1,6 +1,4 @@
-﻿using Toarnbeike.Dispatch.Abstractions;
-
-namespace Toarnbeike.Dispatch.Requests;
+﻿namespace Toarnbeike.Dispatch.Requests;
 
 /// <summary>
 /// Handler for processing queries.

@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using NSubstitute;
-using Toarnbeike.Dispatch.Failures;
 using Toarnbeike.Dispatch.Implementations;
 using Toarnbeike.Dispatch.Requests;
 using Toarnbeike.Results;

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Toarnbeike.Dispatch.Abstractions;
+namespace Toarnbeike.Dispatch;
 
 /// <summary>
 /// Base interface for all requests.

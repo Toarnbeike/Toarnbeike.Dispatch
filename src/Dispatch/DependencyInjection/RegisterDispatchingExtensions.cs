@@ -1,27 +1,38 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Toarnbeike.Dispatch.Implementations;
+using Toarnbeike.Dispatch.Notifications;
 using Toarnbeike.Dispatch.Pipelines;
 
 namespace Toarnbeike.Dispatch.DependencyInjection;
 
-public static partial class RegisterDispatchingExtensions
+public static class RegisterDispatchingExtensions
 {
-    public static IServiceCollection AddDispatching(this IServiceCollection services, Action<LoggingBehaviorOptions>? configureOptions = null)
+    extension(IServiceCollection services)
     {
-        services.AddSingleton<IRequestDispatcher, RequestDispatcher>();
-        services.AddScoped(typeof(IRequestExecutor<,>), typeof(RequestExecutor<,>));
-        services.TryAddSingleton(TimeProvider.System);
-        if (configureOptions != null)
+        public IServiceCollection AddRequestDispatching(Action<LoggingBehaviorOptions>? configureOptions = null)
         {
-            services.Configure(configureOptions);
+            services.AddSingleton<IRequestDispatcher, RequestDispatcher>();
+            services.AddScoped(typeof(IRequestExecutor<,>), typeof(RequestExecutor<,>));
+            services.TryAddSingleton(TimeProvider.System);
+            if (configureOptions != null)
+            {
+                services.Configure(configureOptions);
+            }
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ExceptionBehavior<,>));
+        
+            return services;
         }
-        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>));
-        services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ExceptionBehavior<,>));
 
-        RegisterSourceGeneratedHandlers(services);
-        return services;
+        public IServiceCollection AddNotificationDispatching()
+        {
+            services.AddScoped<INotificationDispatcher, NotificationDispatcher>();
+            services.AddScoped<INotificationHandlerResolver, ManualDiNotificationHandlerResolver>();
+            services.TryAddSingleton<INotificationFeedbackSink, NoOpNotificationFeedbackSink>();
+            services.AddSingleton<ParallelWithFeedbackStrategy>();
+            services.AddSingleton<SequentialStrategy>();
+            return services;
+        }
     }
-
-    static partial void RegisterSourceGeneratedHandlers(IServiceCollection services);
 }

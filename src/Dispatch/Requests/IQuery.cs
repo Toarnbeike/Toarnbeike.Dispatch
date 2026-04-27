@@ -1,6 +1,4 @@
-﻿using Toarnbeike.Dispatch.Abstractions;
-
-namespace Toarnbeike.Dispatch.Requests;
+﻿namespace Toarnbeike.Dispatch.Requests;
 
 /// <summary>
 /// Request that queries the system for data and returns a result of type TResult.

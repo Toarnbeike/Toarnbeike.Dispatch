@@ -1,5 +1,4 @@
 ﻿using NSubstitute;
-using Toarnbeike.Dispatch.Abstractions;
 using Toarnbeike.Dispatch.Implementations;
 using Toarnbeike.Dispatch.Pipelines;
 using Toarnbeike.Dispatch.Requests;

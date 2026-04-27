@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using Toarnbeike.Results;
 
-namespace Toarnbeike.Dispatch.Abstractions;
+namespace Toarnbeike.Dispatch;
 
 /// <summary>
 /// Base interface for all requests handlers.

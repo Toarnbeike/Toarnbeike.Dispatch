@@ -1,11 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Toarnbeike.Dispatch.Abstractions;
 using Toarnbeike.Dispatch.Requests;
 using Toarnbeike.Dispatch.Responses;
 
 namespace Toarnbeike.Dispatch.DependencyInjection;
 
-public static class RegisterHandlerExtensions
+public static class RegisterRequestHandlerExtensions
 {
     /// <param name="services">The service collection to register the handler with.</param>
     extension(IServiceCollection services)

@@ -21,4 +21,8 @@
 	<ItemGroup>
 		<Using Include="Shouldly" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Notifications\" />
+	</ItemGroup>
 </Project>

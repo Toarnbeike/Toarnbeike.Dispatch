@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Toarnbeike.Dispatch.Abstractions;
 using Toarnbeike.Dispatch.DependencyInjection;
 using Toarnbeike.Dispatch.Failures;
 using Toarnbeike.Dispatch.Pipelines;
@@ -13,6 +12,16 @@ namespace Toarnbeike.Dispatch.Tests;
 
 public class RequestDispatchingTests
 {
+    private static ServiceProvider BuildServiceProvider(Action<IServiceCollection>? configure = null)
+    {
+        var services = new ServiceCollection();
+        services.AddTestLoggerProvider();
+        services.AddRequestDispatching();
+
+        configure?.Invoke(services);
+        return services.BuildServiceProvider();
+    }
+
     [Test]
     public async Task DispatchingRequest_EndToEnd()
     {
@@ -153,15 +162,5 @@ public class RequestDispatchingTests
         var result = await dispatcher.Dispatch(new TestQuery());
 
         result.ShouldBeFailureOfType<ExceptionFailure>();
-    }
-
-    private static ServiceProvider BuildServiceProvider(Action<IServiceCollection>? configure = null)
-    {
-        var services = new ServiceCollection();
-        services.AddTestLoggerProvider();
-        services.AddDispatching();
-
-        configure?.Invoke(services);
-        return services.BuildServiceProvider();
     }
 }

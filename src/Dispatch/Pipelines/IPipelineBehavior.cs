@@ -1,5 +1,4 @@
-﻿using Toarnbeike.Dispatch.Abstractions;
-using Toarnbeike.Results;
+﻿using Toarnbeike.Results;
 
 namespace Toarnbeike.Dispatch.Pipelines;
 

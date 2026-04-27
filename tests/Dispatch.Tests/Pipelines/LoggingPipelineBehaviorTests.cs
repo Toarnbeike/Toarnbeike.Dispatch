@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Time.Testing;
 using NSubstitute;
-using Toarnbeike.Dispatch.Abstractions;
 using Toarnbeike.Dispatch.Pipelines;
 using Toarnbeike.Dispatch.Requests;
 using Toarnbeike.Results;
