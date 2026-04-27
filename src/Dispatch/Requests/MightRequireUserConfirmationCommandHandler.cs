@@ -9,7 +9,7 @@ namespace Toarnbeike.Dispatch.Requests;
 /// </summary>
 /// <typeparam name="TCommand">The type of the command this handler processes.</typeparam>
 public abstract class MightRequireUserConfirmationCommandHandler<TCommand> : IRequestHandler<TCommand, CommandResponse>
-    where TCommand : MightRequireUserConfirmationCommand
+    where TCommand : MightRequireUserConfirmationCommand, IRequest<CommandResponse>
 {
     /// <summary>
     /// Determine if the command requires user confirmation before being executed.

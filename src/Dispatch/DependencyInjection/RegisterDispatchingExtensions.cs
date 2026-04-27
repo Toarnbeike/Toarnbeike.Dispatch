@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
-using Toarnbeike.Dispatch.Implementations;
 using Toarnbeike.Dispatch.Notifications;
 using Toarnbeike.Dispatch.Pipelines;
+using Toarnbeike.Dispatch.Requests;
 
 namespace Toarnbeike.Dispatch.DependencyInjection;
 

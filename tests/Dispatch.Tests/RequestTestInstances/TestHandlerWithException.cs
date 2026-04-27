@@ -1,4 +1,5 @@
-﻿using Toarnbeike.Results;
+﻿using Toarnbeike.Dispatch.Requests;
+using Toarnbeike.Results;
 
 namespace Toarnbeike.Dispatch.Tests.RequestTestInstances;
 

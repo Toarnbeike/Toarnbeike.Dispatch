@@ -1,8 +1,7 @@
-﻿using Toarnbeike.Results;
+﻿using Toarnbeike.Dispatch.Requests;
+using Toarnbeike.Results;
 
 namespace Toarnbeike.Dispatch.Pipelines;
-
-public delegate Task<Result<TResult>> RequestHandlerDelegate<TResult>();
 
 public interface IPipelineBehavior<in TRequest, TResult>
     where TRequest : IRequest<TResult>

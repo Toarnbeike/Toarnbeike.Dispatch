@@ -2,11 +2,10 @@
 using System.Collections.Concurrent;
 using System.Reflection;
 using Toarnbeike.Dispatch.Failures;
-using Toarnbeike.Dispatch.Requests;
 using Toarnbeike.Dispatch.Responses;
 using Toarnbeike.Results;
 
-namespace Toarnbeike.Dispatch.Implementations;
+namespace Toarnbeike.Dispatch.Requests;
 
 internal sealed class RequestDispatcher(IServiceScopeFactory scopeFactory) : IRequestDispatcher
 {

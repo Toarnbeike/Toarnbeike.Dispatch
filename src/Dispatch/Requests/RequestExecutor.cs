@@ -1,7 +1,7 @@
 ﻿using Toarnbeike.Dispatch.Pipelines;
 using Toarnbeike.Results;
 
-namespace Toarnbeike.Dispatch.Implementations;
+namespace Toarnbeike.Dispatch.Requests;
 
 internal sealed class RequestExecutor<TRequest, TResult>(
     IRequestHandler<TRequest, TResult> handler,

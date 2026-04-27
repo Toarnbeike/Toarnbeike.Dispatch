@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Toarnbeike.Dispatch;
+namespace Toarnbeike.Dispatch.Requests;
 
 /// <summary>
 /// Base interface for all requests.

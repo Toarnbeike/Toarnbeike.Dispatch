@@ -1,11 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using NSubstitute;
-using Toarnbeike.Dispatch.Implementations;
 using Toarnbeike.Dispatch.Requests;
 using Toarnbeike.Results;
 using Toarnbeike.Results.TestExtensions;
 
-namespace Toarnbeike.Dispatch.Tests.Implementations;
+namespace Toarnbeike.Dispatch.Tests.Requests;
 
 /// <remarks>
 /// TestQuery must be public in order to make a Substitute.For{IRequestExecutor{TestQuery, int{>>}} in the tests,

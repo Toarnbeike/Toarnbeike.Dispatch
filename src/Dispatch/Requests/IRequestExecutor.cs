@@ -1,8 +1,8 @@
 ﻿using Toarnbeike.Results;
 
-namespace Toarnbeike.Dispatch.Implementations;
+namespace Toarnbeike.Dispatch.Requests;
 
-public interface IRequestExecutor<in TRequest, TResult>
+internal interface IRequestExecutor<in TRequest, TResult>
     where TRequest : IRequest<TResult>
     where TResult : notnull
 {

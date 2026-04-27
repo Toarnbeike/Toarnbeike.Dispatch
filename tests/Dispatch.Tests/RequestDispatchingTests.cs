@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using Toarnbeike.Dispatch.DependencyInjection;
 using Toarnbeike.Dispatch.Failures;
 using Toarnbeike.Dispatch.Pipelines;
+using Toarnbeike.Dispatch.Requests;
 using Toarnbeike.Dispatch.Tests.RequestTestInstances;
 using Toarnbeike.Results.Failures;
 using Toarnbeike.Results.TestExtensions;

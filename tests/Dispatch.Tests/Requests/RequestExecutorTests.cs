@@ -1,11 +1,10 @@
 ﻿using NSubstitute;
-using Toarnbeike.Dispatch.Implementations;
 using Toarnbeike.Dispatch.Pipelines;
 using Toarnbeike.Dispatch.Requests;
 using Toarnbeike.Results;
 using Toarnbeike.Results.Failures;
 
-namespace Toarnbeike.Dispatch.Tests.Implementations;
+namespace Toarnbeike.Dispatch.Tests.Requests;
 
 public class RequestExecutorTests
 {

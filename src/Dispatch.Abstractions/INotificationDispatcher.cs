@@ -1,6 +1,7 @@
-﻿using Toarnbeike.Results;
+﻿using Toarnbeike.Dispatch.Notifications;
+using Toarnbeike.Results;
 
-namespace Toarnbeike.Dispatch.Notifications;
+namespace Toarnbeike.Dispatch;
 
 public interface INotificationDispatcher
 {
