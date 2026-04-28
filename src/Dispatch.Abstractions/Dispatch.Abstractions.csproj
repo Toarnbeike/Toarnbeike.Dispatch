@@ -1,9 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<RootNamespace>Toarnbeike.Dispatch</RootNamespace>
 		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>Toarnbeike.Dispatch</RootNamespace>
+		<AssemblyName>Toarnbeike.Dispatch.Abstractions</AssemblyName>
+
+		<PackageId>Toarnbeike.Dispatch.Abstractions</PackageId>
+		<!-- Version is managed centrally in Directory.build.props to keep versions in sync.-->
+		<Description>Abstractions for Toarnbeike.Dispatch; available for netstandard2.0</Description>
+		<PackageTags>dispatch framework request notification handler abstraction sourcegen netstandard2.0</PackageTags>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="../../README.md" Pack="true" PackagePath="" Visible="false"/>
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Toarnbeike.Results.Abstractions" />

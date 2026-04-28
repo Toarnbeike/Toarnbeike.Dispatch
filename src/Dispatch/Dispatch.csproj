@@ -1,8 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<RootNamespace>Toarnbeike.Dispatch</RootNamespace>
 		<TargetFramework>net10.0</TargetFramework>
+		<RootNamespace>Toarnbeike.Dispatch</RootNamespace>
+		<AssemblyName>Toarnbeike.Dispatch</AssemblyName>
+
+		<PackageId>Toarnbeike.Dispatch</PackageId>
+		<!-- Version is managed centrally in Directory.build.props to keep versions in sync.-->
+		<Description>lightweight dispatching framework for result driven requests and notifications</Description>
+		<PackageTags>dispatch framework request notification handler results</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -17,7 +23,8 @@
 	  <ProjectReference Include="..\Dispatch.Abstractions\Dispatch.Abstractions.csproj" />
 	</ItemGroup>
 
-	<PropertyGroup>
-		<NoWarn>$(NoWarn);CA2012</NoWarn>
-	</PropertyGroup>
+	<ItemGroup>
+		<None Include="../../README.md" Pack="true" PackagePath="" Visible="false"/>
+	</ItemGroup>
+
 </Project>
