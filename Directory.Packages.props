@@ -13,7 +13,7 @@
 	<ItemGroup Label="Toarnbeike">
 		<PackageVersion Include="Toarnbeike.Results" Version="2.0.0" />
 		<PackageVersion Include="Toarnbeike.Results.Abstractions" Version="2.0.0" />
-		<PackageVersion Include="Toarnbeike.Optional" Version="1.1.0" />
+		<PackageVersion Include="Toarnbeike.Optional" Version="2.0.0" />
 		<PackageVersion Include="Toarnbeike.Testing" Version="0.1.0" />
 	</ItemGroup>
 	<ItemGroup Label="Testsuite">
